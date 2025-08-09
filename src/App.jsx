@@ -1,39 +1,32 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import { useNavigate } from 'react-router-dom'
 import './App.css'
 
 function App() {
   const navigate = useNavigate()
-  const [count, setCount] = useState(0)
-
-  const openHome = () => {
-    navigate('/home')
-  }
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
+      <h1>O que você quer fazer hoje?</h1> {/* implementar mais tarde um botão de "Relaxar" aí algo engraçado acontece */}
       <div className="card">
-        <button onClick={() => openHome()}>
-          count is {count}
+        <button onClick={() => navigate('/payment')}>
+          Pagamentos
         </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+        <button onClick={() => navigate('/advertising')}>
+          Organizar postagens
+        </button>
+        <button onClick={() => navigate('/partners')}>
+          Gerenciar Parcerias
+        </button>
+        <button onClick={() => navigate('/events')}>
+          Acompanhar Eventos
+        </button>
+        <button onClick={() => navigate('/collaborators')}>
+          Gerir Colaboradores
+        </button>
       </div>
       <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+        Selecione uma opção e bora conquistar!</p>
     </>
   )
 }
