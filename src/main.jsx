@@ -1,18 +1,19 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import './index.css'
-import Layout from './components/Layout.jsx'
+import React from 'react'
+import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import GlobalStyles from './styles/GlobalStyles.js'
+import Layout from './components/Layout.jsx'
 import PaymentPage from './pages/PaymentPage.jsx'
 import AdvertisingPage from './pages/AdvertisingPage.jsx'
 import PartnersPage from './pages/PartnersPage.jsx'
 import EventsPage from './pages/EventsPage.jsx'
 import CollaboratorsPage from './pages/CollaboratorsPage.jsx'
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
     <BrowserRouter>
+      <GlobalStyles />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<App />} />
@@ -24,5 +25,5 @@ createRoot(document.getElementById('root')).render(
         </Route>
       </Routes>
     </BrowserRouter>
-  </StrictMode>,
+  </React.StrictMode>,
 )
